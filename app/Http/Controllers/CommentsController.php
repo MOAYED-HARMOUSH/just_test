@@ -21,6 +21,7 @@ class CommentsController extends Controller
         'post_id'=>$id,
         'commenter_id'=>$user->id
     ]);
+    ///////////////
     }
 
     /**
@@ -37,7 +38,7 @@ class CommentsController extends Controller
      * Store a newly created resource in storage.
      */
     public function edit_commente_on_post(Request $request,$post_id,$comment_id)
-    {// كمله 
+    {// كمله
         $user=Auth::user();
         $user=User::find($user->id);
 
