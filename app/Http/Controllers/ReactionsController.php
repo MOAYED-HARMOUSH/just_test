@@ -25,7 +25,7 @@ class ReactionsController extends Controller
             'location_id' => $user->id,
             'location_type' => 'post',
             'user_id' => $user->id,
-            'type' => 1
+            'type' => $likeordi
         ]);
         if ($likeordi == 1) {
             $r = $post->value('likes_counts');
@@ -48,9 +48,9 @@ class ReactionsController extends Controller
         $d = Reactions::create([
 
             'location_id' => $user->id,
-            'location_type' => 'post',
+            'location_type' => 'comment',
             'user_id' => $user->id,
-            'type' => 0
+            'type' => $likeordi
 
         ]);
         if ($likeordi == 1) {
@@ -90,7 +90,7 @@ class ReactionsController extends Controller
     {
         $user = Auth::user();
         $user = User::find($user->id);
-        Reactions::where('location_type', 'post')->where('location_id', $user->id)->delete();
+        Reactions::where('location_type', 'comment')->where('location_id', $user->id)->delete();
         $aaa = $comment = Comments::find($id);
 
         if ($likeordi == 1) {

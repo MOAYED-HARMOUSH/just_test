@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('Content');
             $table->string('type');
             $table->morphs('location');
-            $table->bigInteger('likes_counts')->nullable();
-            $table->bigInteger('dislikes_counts')->nullable();
-            $table->bigInteger('reports_number')->nullable()->default(0);
+            $table->bigInteger('likes_counts')->default(0);
+            $table->bigInteger('dislikes_counts')->default(0);
+            $table->bigInteger('reports_number')->default(0);
 
             $table->foreignId('user_id') // مشان نعرف مين نشر
             ->constrained('users')

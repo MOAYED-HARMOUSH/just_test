@@ -14,7 +14,7 @@ return new class extends Migration
 
             Schema::create('request__media', function (Blueprint $table) {
                 $table->id();
-                $table->boolean('is_approved');
+                $table->boolean('is_approved')->nullable();
 
                 $table->foreignId('sender')
                 ->constrained('users')

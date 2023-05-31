@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('Speciality');
             $table->string('department');
-            $table->string('framework')->nullable();
-            $table->string('Language');
-            $table->date('started_at');
+            $table->json('framework')->nullable();
+            $table->json('Language');
 
             $table->timestamps();
         });

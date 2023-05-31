@@ -36,7 +36,7 @@ class RequestMediaController extends Controller
         ]);
        return $request_media->save();}
        else
-        return 'already friends';
+        return 'already sent';
 
 
 

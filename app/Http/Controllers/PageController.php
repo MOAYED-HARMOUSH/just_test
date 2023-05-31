@@ -72,6 +72,7 @@ class PageController extends Controller
     {
        $user=Auth::user();
        $user=User::find($user->id);
+       
        $email= Page::where('admin_id',$user->id)->where('id',$id)->value('email');
        $bio= Page::where('admin_id',$user->id)->where('id',$id)->value('bio');
        $cover_image= Page::where('admin_id',$user->id)->where('id',$id)->value('cover_image');

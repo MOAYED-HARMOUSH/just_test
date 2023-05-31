@@ -22,24 +22,23 @@ class StudentController extends Controller
      */
     public function student_user(Request $request)
     {
-$user=Auth::user();
-if($user->student_id==null)
- {$student=Student::create([
-    'study_sequence'=>$request->study_sequence,
-    'section'=>$request->section,
+        $user = Auth::user();
+        if ($user->student_id == null) {
+            $student = Student::create([
+                'study_sequence' => $request->study_sequence,
+                'section' => $request->section,
 
-    'current_year'=>$request->current_year,
-    'study_semester'=>$request->study_semester ,
+                'current_year' => $request->current_year,
+                'study_semester' => $request->study_semester,
 
 
-]);
-$user=User::where('id',$user->id)->update([
-    'student_id'=>$student->id
-]);}
-else
-return ' already student';
-
-}
+            ]);
+            $user = User::where('id', $user->id)->update([
+                'student_id' => $student->id
+            ]);
+        } else
+            return ' already student';
+    }
     /**
      * Store a newly created resource in storage.
      */

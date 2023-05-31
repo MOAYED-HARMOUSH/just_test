@@ -21,6 +21,6 @@ class Follow_Page extends Model
     }
     public function Page():BelongsTo
     {
-        return $this->belongsTo(Follow_Page::class,  'page_id');
+        return $this->belongsTo(Page::class,  'page_id');
     }
 }

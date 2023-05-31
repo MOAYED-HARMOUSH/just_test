@@ -14,7 +14,7 @@ class Speciality extends Model
         'Speciality',
         'department',
         'framework',
-        'Language','started_at'
+        'Language',
 
     ];
 

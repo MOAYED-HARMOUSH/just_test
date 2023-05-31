@@ -30,7 +30,7 @@ return new class extends Migration
             ->cascadeOnDelete()
             ->cascadeOnUpdate();
 
-            $table->boolean('is_approved')->nullable()->default(false);
+            $table->boolean('is_approved')->nullable();
             $table->timestamps();
         });
     }

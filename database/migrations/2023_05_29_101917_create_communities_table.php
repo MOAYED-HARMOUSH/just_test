@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_name');
             $table->string('cover_image_name');
-            $table->bigInteger('subscriber_counts')->nullable()->default(0);
+            $table->bigInteger('subscriber_counts')->default(0);
             $table->timestamps();
         });
     }

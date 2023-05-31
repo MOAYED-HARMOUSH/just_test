@@ -19,7 +19,7 @@ return new class extends Migration
             ->constrained('posts')
             ->cascadeOnDelete()
             ->cascadeOnUpdate();
-            $table->bigInteger('reports_number')->nullable()->default(0);
+            $table->bigInteger('reports_number')->default(0);
 
 
             $table->foreignId('commenter_id')

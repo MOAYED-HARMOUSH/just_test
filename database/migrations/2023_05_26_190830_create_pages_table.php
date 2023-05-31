@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_name');
             $table->string('cover_image');
-            $table->text('bio');
+            $table->text('bio')->nullable();
             $table->integer('followers_number')->nullable();
             $table->string('email')->unique();
 
